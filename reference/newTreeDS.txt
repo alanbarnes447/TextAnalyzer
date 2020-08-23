@@ -1,0 +1,20 @@
+
+
+namespace datastructure {
+  class newTreeDS() {
+
+
+    //constructor for class
+    public newTreeDS() {
+
+    }
+  }
+
+  class node() {
+
+    //constructor for class
+    public node() {
+
+    }
+  }
+}

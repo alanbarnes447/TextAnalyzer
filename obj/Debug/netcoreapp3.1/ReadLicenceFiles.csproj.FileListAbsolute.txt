@@ -1,0 +1,13 @@
+C:\CS\ReadLicenceFiles\obj\Debug\netcoreapp3.1\ReadLicenceFiles.csprojAssemblyReference.cache
+C:\CS\ReadLicenceFiles\obj\Debug\netcoreapp3.1\ReadLicenceFiles.AssemblyInfoInputs.cache
+C:\CS\ReadLicenceFiles\obj\Debug\netcoreapp3.1\ReadLicenceFiles.AssemblyInfo.cs
+C:\CS\ReadLicenceFiles\bin\Debug\netcoreapp3.1\ReadLicenceFiles.exe
+C:\CS\ReadLicenceFiles\bin\Debug\netcoreapp3.1\ReadLicenceFiles.deps.json
+C:\CS\ReadLicenceFiles\bin\Debug\netcoreapp3.1\ReadLicenceFiles.runtimeconfig.json
+C:\CS\ReadLicenceFiles\bin\Debug\netcoreapp3.1\ReadLicenceFiles.runtimeconfig.dev.json
+C:\CS\ReadLicenceFiles\bin\Debug\netcoreapp3.1\ReadLicenceFiles.dll
+C:\CS\ReadLicenceFiles\bin\Debug\netcoreapp3.1\ReadLicenceFiles.pdb
+C:\CS\ReadLicenceFiles\obj\Debug\netcoreapp3.1\ReadLicenceFiles.dll
+C:\CS\ReadLicenceFiles\obj\Debug\netcoreapp3.1\ReadLicenceFiles.pdb
+C:\CS\ReadLicenceFiles\obj\Debug\netcoreapp3.1\ReadLicenceFiles.csproj.CoreCompileInputs.cache
+C:\CS\ReadLicenceFiles\obj\Debug\netcoreapp3.1\ReadLicenceFiles.genruntimeconfig.cache

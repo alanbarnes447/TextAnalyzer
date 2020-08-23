@@ -1,0 +1,8 @@
+1. Change current directory to project folder
+cd directory in terminal, new folder to hold project in
+
+2. To create a new project
+dotnet new console //creates a new C# project file named HelloWold.csproj
+
+3. To run a project
+dotnet run   //to run a file

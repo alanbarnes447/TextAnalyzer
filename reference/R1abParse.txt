@@ -1,0 +1,242 @@
+//abParse.cs is an object class that when initialized, makes an object that
+//takes a special character as input and treats that character as a bracket
+//In addition, a start sequence of characters can be specified
+//and an end sequence of characters can be specified
+
+//method will be used to break up a file into logical sections that can
+//be further processed by this class
+
+//input:
+//specified file as TXT
+//string linked list of nested start delineators
+//string linked list of corresponding nested end delineators
+//input number of times used or untill end of file
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using DataStruct;
+
+namespace abParseFile {
+
+
+public class abParse {
+  private string filepath;
+  private string fileName;
+  int numOfLines;
+  int numOfDeliminators;
+  private List<string> startDelineator;
+  //Delineators can be nested, as brackets are one inside of the other, for pattern recognition
+  //each set of delineators should have a set of rules that are defined for its own use
+  private List<string> endDelineator;
+  //End delineators can be either 1 new line or 2 new lines
+  //empty line is stored as empty index in list
+  private List<List<string>> delineators;
+  //Linked list where each index is a Linked list
+
+    private LinkedList<string> licInfo;
+
+  private string fileContents;
+
+  //private abTreeDataStructure<T> abTree;
+
+
+  //constructor for the abParse() class
+  public abParse(string fPath, string fName) {
+      filepath = fPath;
+      fileName = fName;
+      numOfLines = 0;
+      numOfDeliminators = 0;
+      startDelineator = new List<string>();
+      endDelineator = new List<string>();
+      delineators = new List<List<string>>();
+      licInfo = new LinkedList<string>();
+      //need to define data
+      //abTree = new abTreeDataStructure<T>(data);
+  }
+  
+  //Method to add delimiters takes a start delim and end delim
+  public void addDeliminators(string d1, string d2, int index) {
+    //Create new list to add to the linked list
+    List<string> d = new List<string>();
+    List<string> dd = delineators[index];
+    d.Add(d1);
+    d.Add(d2);
+
+    delineators.Add(d);
+
+    // startDelineator = delim1;
+    // endDelineator = delim2;
+  }
+
+  public void printDelimiters() {
+    // //Print out all of the start delineators
+    // Console.WriteLine("Start Delineators");
+    // printDelimitersR(startDelineator);
+    // //print out all of the end delimiters
+    // Console.WriteLine("End Delineators");
+    // printDelimitersR(endDelineator);
+    Console.WriteLine(startDelineator.GetType());
+    Console.WriteLine("Start Deliminators");
+    foreach (var sublist in delineators) {
+      foreach (var item in sublist) {
+         Console.WriteLine(item);
+         //Console.WriteLine("somthing is {0} and something is {1}", Array.x, Array.y);
+      }
+    }
+    // Console.WriteLine("End Deliminators");
+    // foreach (var sublist in endDelineator) {
+    //   foreach (var item in sublist) {
+    //      Console.WriteLine(item);
+    //      //Console.WriteLine("somthing is {0} and something is {1}", Array.x, Array.y);
+    //   }
+    // }
+  }
+
+  // recursive solution to iterating data structure
+  // static void printDelimitersR(List<string> delim) {
+    
+  //     foreach (var x in delim) {
+  //       if (x.GetType() == typeof(List<string>)) {
+  //          Console.WriteLine("List");
+  //          printDelimitersR(delim);
+  //       } else if (x.GetType() == typeof(string)) {
+  //          Console.WriteLine("String");
+  //       Console.WriteLine(x);
+  //       }
+        
+  //     }
+  //     //Console.WriteLine("somthing is {0} and something is {1}", Array.x, Array.y);
+
+  // }
+  
+
+
+  // LinkedList<string> lst, bool continueTolLookForInfo
+  //function called to commence parsing of the document
+  public void parse_document() {
+    readFile();
+  }
+
+  //set the string or symbol used for start delimiting sections
+  public void setStartDeliminator(string[] strDelim) {
+      //startDelineator = new string[strDelim.length];
+      // strDelim.CopyTo(startDelineator, 0);
+  }
+  //set the string or symbol used for end delimiter sections
+  public void setEndDeliminator(string[] endDelim) {
+      // endDelineator = new string[endDelim.length];
+      // endDelim.CopyTo(endDelineator, 0);
+  }
+  //use this method if both start and end deliminators are the same
+  public void setBothDeliminator(string[] delim) {
+
+  }
+
+
+  //Set the filename for the document needing parsing
+  public void setFileName(string fname) {
+      fname = fileName;
+  }
+
+  public string getPath() {
+    return filepath;
+  }
+
+
+  //Read contents of file and separate contents into logical units
+  public void readFile() {
+      // if ()
+      // {
+      string fpth = this.filepath;
+        try
+        {
+          using (StreamReader file = new StreamReader(fpth))
+          {
+            int count = 0;
+            string lineOfText = file.ReadLine();
+            while (lineOfText != null)
+            {
+              licInfo.AddLast(lineOfText);
+              //Console.WriteLine(lineOfText);
+              lineOfText = file.ReadLine();
+              count++;
+              numOfLines++;
+            }
+            file.Close();
+
+          }
+          //Print out the second line in the file that is read
+          if(licInfo.Count > 2)
+          {
+            string[] info = new string[licInfo.Count + 1];
+            licInfo.CopyTo(info, 0);
+            Console.WriteLine(info[2]);
+          }
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+        finally
+        {
+            Console.WriteLine("finally Code");
+        }
+      // }
+  }
+
+}
+}
+
+
+
+//1. initialize getCode(string path) object
+//2. Call Call parse_document() method that calls readFile() to read contents
+//       of file and separate contents into logical units and then parses the
+//       information for use
+//3.
+
+/*
+namespace parsing
+{
+  class program
+  {
+    public static void Main(string[] args)
+    {
+        string path = "L:\\CAM-Library\\Niigata\\NiigataMacros\\CSharp\\Examples\\LicensingResults2.txt";
+        //test for the console
+        Console.WriteLine("HellowThere");
+        Console.ReadLine();//Pause
+
+        abParse getCode = new abParse(path);
+        getCode.parse_document();
+
+
+
+        Console.WriteLine(getCode.getPath());
+        Console.ReadLine();
+
+        //return 0;
+    }
+  }
+}
+*/
+
+
+
+
+
+
+
+//node class for chaining together delineators within delineators
+//structure similar to a linked list with separate lists for start and end nodes
+// public class startNode() {
+//
+//
+// }
+//
+// public class endNode () {
+//
+//
+// }

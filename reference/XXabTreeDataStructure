@@ -1,0 +1,71 @@
+//This is a class that implements a tree data structure
+
+using System;
+using System.Collections.Generic;
+using System.delegate;
+
+namespace DataStruct {
+
+
+///////////////////////////////////////////////////
+//Class for creating a tree data structure
+///////////////////////////////////////////////////
+//delegate is pointer to a function
+//delegate void TreeIterator<T>(T nodeData);
+
+    public class abTree<T> {
+        //declare variables
+        private T data;
+        //private LinkedList<abTree<T> children;
+
+        //constructor for class
+        public abTree(T data) {
+            //initialize both variables
+            this.data = data;
+            //children = new LinkedList<abTree<T>>();
+        }
+
+        public void AddChild(T data) {
+            children.AddFirst(new abTree<T>(data));
+        }
+
+        public abTree<T> GetChild(int i) {
+            foreach (abTree<T> abNode in children) {
+                if (--i == 0) {
+                    return abNode;
+                }
+            }
+            return null;
+        }
+
+        public void Traverse(abTree<T> node, TreeIterator<T> iterateTree) {
+            iterateTree(node.data);
+            foreach (abTree<T> child in node.children) {
+                traverse(child, iterateTree);
+            }
+        }
+
+    }
+
+    /////////////////////////////////////////////////////
+    //Class for creating a node for a tree data structure
+    /////////////////////////////////////////////////////
+
+    public class TreeNode (T data, T parentNode) {
+
+        T root;
+        T leftChild;
+        T rightChild;
+        T parent;
+
+        public TreeNode(data) {
+            root = data;
+            leftChild = null;
+            rightChild = null;
+            parent = parentNode;
+        }
+
+    }
+
+
+}

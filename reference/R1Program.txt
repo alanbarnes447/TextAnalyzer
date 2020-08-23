@@ -1,0 +1,98 @@
+﻿using System;
+using System.Collections.Generic;
+using abParseFile;
+using DataStruct;
+//need to create test.txt ahead of time in path
+
+namespace ReadLicenceFiles
+{
+    class Program
+    {
+    
+        static void Main(string[] args)
+        {
+        //Temporary list to hold the items for testing
+        List<string> delim1 = new List<string>();
+        List<string> delim2 = new List<string>();
+
+        //add values to delim lists for testing
+        //Add("start delimiter", "end Delimiter)
+        delim1.Add(";", ";");
+        delim1.Add(";", ";");
+        delim1.Add(";", ";");
+        delim1.Add(";", ";");
+        delim2 = delim1;
+
+        //add 1st set of delim
+
+
+        //define the path that for the file to read
+        string path = "C:\\CS\\test.txt";
+        string fName = "test.txt";
+
+        //define new parsing object
+        abParse getCode = new abParse(path, fName);
+ 
+        //final product will take in String characters
+        //Add start and end deliminators to object
+        getCode.addDeliminators(delim1, delim2);
+
+        //do the parsing to the document to find the values
+        getCode.parse_document();
+
+        //Console.WriteLine(getCode.getPath());
+        Console.ReadLine();
+
+        // Write out test for path
+        string p = getCode.getPath();  //get path from object
+        Console.WriteLine(p);  //write path
+        getCode.printDelimiters();
+        Console.ReadLine();    //pause
+
+        
+
+
+        //return 0;
+        //Console.WriteLine("Hello World!");
+        }
+         
+    
+   
+/*
+    //Example of using the int binary tree
+    static void Main(string[] args) {
+
+      Random rnd = new Random(); //create random number generator
+      int num; //hold the random number to be added to the tree
+      var num1 = ""; //lbArray1 displays the unsorted list of numbers
+      var num2 = ""; //num2 will be the sorted list of numbers from the tree
+      num = rnd.Next(0, 100); //set the first item in the tree
+      num1 = num1 + num.ToString().PadLeft(3); //add it to the unsorted list string
+      abIntTree intree = new abIntTree(num); //create the tree with an initial value
+
+      int n = 10; //number of items to store in the tree
+
+      for (int i = 1; i < n; i++) { //generate n items and store in the tree
+        num = rnd.Next(0, 100); //generate a random number to be added to the tree
+        num1 = num1 + num.ToString().PadLeft(3); //add it to the list string
+        intree.AddRc(num); //recursive adding to the tree
+
+      }
+
+      Console.WriteLine(num1);
+      string treestring = "";
+      intree.Print(null, ref treestring);  //call the print method of the tree class to Print
+      num2 = treestring;
+      Console.WriteLine(num2);
+    }
+*/
+
+  }
+  
+
+}
+
+
+/*
+
+    */

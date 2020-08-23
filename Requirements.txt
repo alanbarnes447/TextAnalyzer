@@ -1,0 +1,32 @@
+
+User Requirements Document:
+
+Text Analysis Software:  AB Text View -text analysis software
+Find names inside of context
+Find any emails
+Find words that occur the most
+Find names
+find phone numbers
+put data into categories
+put emails in order of urgency 
+organize social media comments by sentiment
+sort information by topic
+Turn data into information
+Pattern matching for text and show only so many lines of text for altering
+Start and end pattern for matching inside text
+
+
+Links to information:
+https://monkeylearn.com/blog/text-analysis-software/
+https://www.lexalytics.com/technology/machine-learning
+https://opennlp.apache.org/
+https://www.researchgate.net/post/Can_you_recommend_a_Free_Text_Mining_tool
+
+
+
+Open source tools for parsing:
+R, Keatext, KNIME, Refinitiv, TextSTAT, WordStat, nelSenso.Net, Coding Analysis Toolkit (CAT)
+Carrot2, GATE, Gensim, openNLP, Natural Language Toolkit, RapidMiner, KH Coder, PLOS Text Mining Collection, 
+Unstructured Information Management Architecture
+
+
